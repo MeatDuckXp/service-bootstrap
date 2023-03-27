@@ -47,7 +47,7 @@ namespace ServiceBootstrap
         /// <summary>
         ///     Gets or sets a method to call the initialize the runtime platform services (e. g. AssetLoader)
         /// </summary>
-        public Action RuntimePlatformServicesInitializer { get; private set; }
+        public Action RuntimePlatformServicesInitializer { get; }
 
         /// <summary>
         ///     Gets or sets the <see cref="IRuntimePlatform"/> instance.
@@ -141,7 +141,7 @@ namespace ServiceBootstrap
         /// <summary>
         ///    Gets AfterPlatformServicesSetupCallback
         /// </summary>
-        public Action<TServiceBuilder> AfterPlatformServicesSetupCallback { get; private set; } = builder => { };
+        public Action<TServiceBuilder> AfterPlatformServicesSetupCallback { get; } = builder => { };
 
         #region Privte methods
         
@@ -187,10 +187,10 @@ namespace ServiceBootstrap
             //8. Initialize service.
             Instance.Initialize(ServiceHost.Services);
             
-            //9
+            //9. Call the callback after the service has been initialized
             AfterPlatformServicesSetupCallback(Self);
             
-            //10
+            //10. Signal that the sequence is complete 
             Instance.OnInitializationCompleted();
         }
         #endregion

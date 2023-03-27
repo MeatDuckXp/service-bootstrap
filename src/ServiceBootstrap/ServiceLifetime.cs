@@ -17,6 +17,8 @@
         /// <returns>Control code.</returns>
         public virtual int Start(string[] args)
         {
+            Args = args;
+
             return default;
         }
 

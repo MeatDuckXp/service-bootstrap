@@ -16,7 +16,7 @@
         WinNT,
 
         /// <summary>
-        ///     Linux distro
+        ///     Linux distribution
         /// </summary>
         Linux, 
 

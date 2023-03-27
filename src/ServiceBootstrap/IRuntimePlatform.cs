@@ -1,7 +1,7 @@
 ﻿namespace ServiceBootstrap
 {
     /// <summary>
-    ///  This interface defines the runtime platform lookup operations.
+    ///     This interface defines the runtime platform lookup operations.
     /// </summary>
     public interface IRuntimePlatform
     { 
